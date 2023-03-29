@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./style.css"
 
 const currencies = [
 	{
@@ -50,12 +51,11 @@ const Form = ({ children, calculateResult }) => {
 				<span className="form__mainCurrency">
 					PLN
 				</span>
-				<button className="form__button">
-					Oblicz
-				</button>
-				<div className="form__output">
+				<div>
 					{children}
-					<select onChange={handleSelect}>
+					<select
+						className="form__select"
+						onChange={handleSelect}>
 						{currencies.map(currency =>
 							<option
 								key={currency.key}
@@ -66,6 +66,9 @@ const Form = ({ children, calculateResult }) => {
 						)}
 					</select>
 				</div>
+				<button className="form__button">
+					Oblicz
+				</button>
 			</fieldset>
 		</form>
 	);

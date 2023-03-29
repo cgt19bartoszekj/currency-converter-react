@@ -1,0 +1,43 @@
+.form__fieldset {
+    padding: 40px;
+    border: 1px solid #b3b3b3;
+    border-radius: 50px;
+    background-color: #00000090;
+    box-shadow: #000000 0 0 20px;
+}
+
+.form__input {
+    width: 35%;
+    color: #e8eaed;
+    border: 1px solid #ffffff90;
+    border-radius: 10px;
+    padding: 0 10px;
+    background: #00000090;
+}
+
+.form__mainCurrency{
+    margin-left: 10px;
+}
+
+.form__select {
+    cursor: pointer;
+    color: #bdc1c6;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.form__option {
+    background-color: #1a1a1d;
+    color: #a0a3a7;
+}
+
+.form__button {
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 50px;
+    background: #00000090;
+    color: #e8eaed;
+    border: 1px solid #bdc1c6;
+}

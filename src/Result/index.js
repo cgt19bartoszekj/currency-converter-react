@@ -1,10 +1,11 @@
+import "./style.css"
 
 const Result = ({ result }) => {
 
 	return (
-		<p className="result">
-			{result}
-		</p>
+		<span className="result">
+			{result.toFixed(2)}
+		</span>
 	);
 };
 
