@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './index.css';
+import Container from './Container';
+import Form from "./Form";
+import Result from "./Result";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	const [result, setNewResult] = useState(0);
+
+	const calculateResult = (selectValue, inputValue) => {
+		setNewResult(result => inputValue * selectValue);
+	};
+
+	return (
+		<Container>
+			<Form
+				calculateResult={calculateResult}
+			>
+				<Result
+					result={result}>
+				</Result>
+			</Form>
+		</Container>
+	);
 }
 
 export default App;
