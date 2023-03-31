@@ -1,6 +1,6 @@
-.result{
-    font-size: 70px;
-    padding: 0;
-    color: #e8eaed;
-    word-wrap: break-word;
+.result {
+	font-size: 70px;
+	padding: 0;
+	color: #e8eaed;
+	word-break: break-all;
 }

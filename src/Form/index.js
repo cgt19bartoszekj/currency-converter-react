@@ -29,10 +29,6 @@ const Form = ({ children, calculateResult }) => {
 		calculateResult(selectValue, inputValue);
 	};
 
-	const handleSelect = ({ target }) => {
-		setSelectValue(target.value)
-	};
-
 	return (
 		<form
 			onSubmit={onFormSubmit}
@@ -46,7 +42,10 @@ const Form = ({ children, calculateResult }) => {
 					className="form__input"
 					type="number"
 					value={inputValue}
-					onChange={({ target }) => setInputValue(inputValue => target.value)}
+					onChange={({ target }) => {
+						const InputMaxLength = 14;
+						setInputValue(target.value.slice(0, InputMaxLength))
+					}}
 				/>
 				<span className="form__mainCurrency">
 					PLN
@@ -55,7 +54,8 @@ const Form = ({ children, calculateResult }) => {
 					{children}
 					<select
 						className="form__select"
-						onChange={handleSelect}>
+						onChange={({ target }) => setSelectValue(target.value)}
+					>
 						{currencies.map(currency =>
 							<option
 								key={currency.key}
@@ -69,6 +69,11 @@ const Form = ({ children, calculateResult }) => {
 				<button className="form__button">
 					Oblicz
 				</button>
+				<div class="form__information">
+					<p>
+						Kursy walut na dzień 23.02.2023r.
+					</p>
+				</div>
 			</fieldset>
 		</form>
 	);

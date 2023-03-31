@@ -18,7 +18,8 @@ function App() {
 				calculateResult={calculateResult}
 			>
 				<Result
-					result={result}>
+					result={result}
+				>
 				</Result>
 			</Form>
 		</Container>
