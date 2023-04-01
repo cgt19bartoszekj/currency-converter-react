@@ -1,4 +1,4 @@
-# CURRENCY CONVERTER
+# CURRENCY CONVERTER REACT
 
 ## Demo
 https://cgt19bartoszekj.github.io/currency-converter-react/
