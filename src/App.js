@@ -8,8 +8,8 @@ function App() {
 
 	const [result, setNewResult] = useState(0);
 
-	const calculateResult = (selectValue, inputValue) => {
-		setNewResult(result => inputValue * selectValue);
+	const calculateResult = (rate, amount) => {
+		setNewResult(result => amount * rate);
 	};
 
 	return (

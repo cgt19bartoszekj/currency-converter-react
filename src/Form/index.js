@@ -21,12 +21,13 @@ const currencies = [
 
 const Form = ({ children, calculateResult }) => {
 
-	const [selectValue, setSelectValue] = useState(0.21);
-	const [inputValue, setInputValue] = useState("");
+	const [exchange, setExchange] = useState(0.21);
+	const [amount, setAmount] = useState("");
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
-		calculateResult(selectValue, inputValue);
+
+		calculateResult(exchange, amount);
 	};
 
 	return (
@@ -41,10 +42,10 @@ const Form = ({ children, calculateResult }) => {
 				<input
 					className="form__input"
 					type="number"
-					value={inputValue}
+					value={amount}
 					onChange={({ target }) => {
 						const InputMaxLength = 14;
-						setInputValue(target.value.slice(0, InputMaxLength))
+						setAmount(target.value.slice(0, InputMaxLength))
 					}}
 				/>
 				<span className="form__mainCurrency">
@@ -54,7 +55,7 @@ const Form = ({ children, calculateResult }) => {
 					{children}
 					<select
 						className="form__select"
-						onChange={({ target }) => setSelectValue(target.value)}
+						onChange={({ target }) => setExchange(target.value)}
 					>
 						{currencies.map(currency =>
 							<option

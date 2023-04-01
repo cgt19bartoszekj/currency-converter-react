@@ -1,73 +1,73 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 .form__fieldset {
-    padding: 40px 40px 0 40px;
-    border: 1px solid #b3b3b3;
-    border-radius: 50px;
-    background-color: #00000090;
-    box-shadow: #000000 0 0 20px;
+	padding: 40px 40px 0 40px;
+	border: 1px solid #b3b3b3;
+	border-radius: 50px;
+	background-color: #00000090;
+	box-shadow: #000000 0 0 20px;
 }
 
 .form__input {
-    width: 50%;
-    color: #e8eaed;
-    border: none;
-    outline: 1px solid #b3b3b3;
-    border-radius: 10px;
-    padding: 0 10px;
-    background: #00000090;
+	width: 50%;
+	color: #e8eaed;
+	border: none;
+	outline: 1px solid #b3b3b3;
+	border-radius: 10px;
+	padding: 0 10px;
+	background: #00000090;
 }
 
 .form__input:focus {
-    outline: 2px solid #007bff;
+	outline: 2px solid #007bff;
 }
 
 .form__input:active {
-    outline: 2px solid #66b0ff;
+	outline: 2px solid #66b0ff;
 }
 
 .form__mainCurrency {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
 .form__select {
-    cursor: pointer;
-    color: #bdc1c6;
-    border: none;
-    background: none;
-    padding: 0;
+	cursor: pointer;
+	color: #bdc1c6;
+	border: none;
+	background: none;
+	padding: 0;
 }
 
 .form__button {
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    border-radius: 50px;
-    background: #00000090;
-    color: #e8eaed;
-    border: 1px solid #bdc1c6;
-    transition: 0.3s;
+	cursor: pointer;
+	margin-top: 20px;
+	width: 100%;
+	border-radius: 50px;
+	background: #00000090;
+	color: #e8eaed;
+	border: 1px solid #bdc1c6;
+	transition: 0.3s;
 }
 
 .form__button:hover {
-    background-color: #00000050;
-    text-shadow: #ffffff50 0 0 10px;
-    box-shadow: #ffffff50 0 0 10px;
+	background-color: #00000050;
+	text-shadow: #ffffff50 0 0 10px;
+	box-shadow: #ffffff50 0 0 10px;
 }
 
 .form__button:active {
-    background-color: #00000030;
-    text-shadow: #ffffff 0 0 10px;
+	background-color: #00000030;
+	text-shadow: #ffffff 0 0 10px;
 }
 
 .form__information {
-    font-size: 20px;
-    font-style: italic;
-    text-align: center;
-    color: #bbbbbb;
-    margin: 0;
+	font-size: 20px;
+	font-style: italic;
+	text-align: center;
+	color: #bbbbbb;
+	margin: 0;
 }
