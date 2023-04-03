@@ -1,26 +1,11 @@
 import { useState } from "react";
-import "./style.css"
+import "./style.css";
+import currencies from "../currencies";
 
-const currencies = [
-	{
-		key: 0,
-		name: "EUR",
-		exchange: 0.21
-	},
-	{
-		key: 1,
-		name: "USD",
-		exchange: 0.22
-	},
-	{
-		key: 2,
-		name: "GBP",
-		exchange: 0.19
-	}
-];
+
+const INPUT_MAX_LENGTH = 14;
 
 const Form = ({ children, calculateResult }) => {
-
 	const [exchange, setExchange] = useState(0.21);
 	const [amount, setAmount] = useState("");
 
@@ -43,10 +28,8 @@ const Form = ({ children, calculateResult }) => {
 					className="form__input"
 					type="number"
 					value={amount}
-					onChange={({ target }) => {
-						const InputMaxLength = 14;
-						setAmount(target.value.slice(0, InputMaxLength))
-					}}
+					onChange={({ target }) =>
+						setAmount(target.value.slice(0, INPUT_MAX_LENGTH))}
 				/>
 				<span className="form__mainCurrency">
 					PLN

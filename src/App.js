@@ -5,7 +5,6 @@ import Form from "./Form";
 import Result from "./Result";
 
 function App() {
-
 	const [result, setNewResult] = useState(0);
 
 	const calculateResult = (rate, amount) => {

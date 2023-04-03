@@ -19,6 +19,7 @@ input::-webkit-inner-spin-button {
 	outline: 1px solid #b3b3b3;
 	border-radius: 10px;
 	padding: 0 10px;
+	margin-bottom: 20px;
 	background: #00000090;
 }
 
