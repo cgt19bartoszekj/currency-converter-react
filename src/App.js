@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './index.css';
 import Container from './Container';
 import Form from "./Form";
-import Result from "./Result";
 
 function App() {
 	const [result, setNewResult] = useState(0);
@@ -15,11 +14,8 @@ function App() {
 		<Container>
 			<Form
 				calculateResult={calculateResult}
+				result={result}
 			>
-				<Result
-					result={result}
-				>
-				</Result>
 			</Form>
 		</Container>
 	);
