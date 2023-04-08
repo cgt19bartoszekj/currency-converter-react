@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './index.css';
-import Container from './Container';
 import Form from "./Form";
 
 function App() {
@@ -11,13 +10,11 @@ function App() {
 	};
 
 	return (
-		<Container>
-			<Form
-				calculateResult={calculateResult}
-				result={result}
-			>
-			</Form>
-		</Container>
+		<Form
+			calculateResult={calculateResult}
+			result={result}
+		>
+		</Form>
 	);
 }
 

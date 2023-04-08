@@ -4,18 +4,19 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 }
 
-.form__fieldset {
-	padding: 0px 40px 0 40px;
+.form {
+	max-width: 1000px;
+	margin: auto;
+	padding: 40px 40px 0 40px;
 	border: 1px solid #b3b3b3;
-	border-radius: 50px;
+	border-radius: 30px;
 	background-color: #00000090;
 	box-shadow: #000000 0 0 20px;
 }
 
-.form__legend {
+.form__title{
 	text-align: center;
-	word-break: keep-all;
-	white-space: nowrap;
+	font-size: 60px;
 }
 
 .form__input {
@@ -41,7 +42,7 @@ input::-webkit-inner-spin-button {
 }
 
 .form__output {
-	margin: 20px 0 5px 0;
+	margin-top: 20px
 }
 
 .form__select {
@@ -60,6 +61,7 @@ input::-webkit-inner-spin-button {
 	color: #e8eaed;
 	border: 1px solid #bdc1c6;
 	transition: 0.3s;
+	margin: 10px 0
 }
 
 .form__button:hover {

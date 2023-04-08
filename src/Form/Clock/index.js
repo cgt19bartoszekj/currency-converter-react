@@ -1,33 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./style.css";
 
 const Clock = () => {
+  const [date, setDate] = useState(new Date());
 
-  const [myDate, setDate] = useState(new Date());
+  const formatDate = () => {
+    return (
+      date.toLocaleString(undefined, {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      })
+    );
+  };
 
-  setTimeout(() => {
-    setInterval(() => {
-      setDate(myDate => new Date());
-    }, 1000);
-  }, 0);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(date => new Date());
+    });
 
-  const formatDate = (myDate) =>
-    myDate.toLocaleString
-      (undefined,
-        {
-          weekday: "long",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          day: "numeric",
-          month: "long",
-        }
-      );
-
+    return clearInterval(intervalId);
+  }, []);
 
   return (
     <div className="clock">
-      {`Dzisiaj jest ${formatDate(myDate)}`}
+      {`Dzisiaj jest ${formatDate()}`}
     </div>
   );
 };

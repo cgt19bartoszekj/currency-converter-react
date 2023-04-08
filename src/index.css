@@ -9,6 +9,7 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 35px;
+  padding: 40px;
   background-image: url("../public/money-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
