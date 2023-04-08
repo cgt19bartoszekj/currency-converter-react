@@ -7,16 +7,14 @@ input::-webkit-inner-spin-button {
 .form {
 	max-width: 1000px;
 	margin: auto;
-	padding: 40px 40px 0 40px;
-	border: 1px solid #b3b3b3;
-	border-radius: 30px;
-	background-color: #00000090;
-	box-shadow: #000000 0 0 20px;
 }
 
-.form__title{
-	text-align: center;
-	font-size: 60px;
+.form__fieldset {
+	padding: 0px 40px 0 40px;
+	border: 1px solid #b3b3b3;
+	border-radius: 50px;
+	background-color: #00000090;
+	box-shadow: #000000 0 0 20px;
 }
 
 .form__input {
@@ -61,7 +59,7 @@ input::-webkit-inner-spin-button {
 	color: #e8eaed;
 	border: 1px solid #bdc1c6;
 	transition: 0.3s;
-	margin: 10px 0
+	margin-top: 10px;
 }
 
 .form__button:hover {
