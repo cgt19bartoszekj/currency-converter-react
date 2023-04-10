@@ -14,7 +14,6 @@ import {
 	Information
 } from "./styled";
 
-
 const INPUT_MAX_LENGTH = 14;
 
 export const Form = ({ calculateResult, result }) => {
@@ -30,44 +29,34 @@ export const Form = ({ calculateResult, result }) => {
 	return (
 		<Wrapper onSubmit={onFormSubmit}>
 			<Fieldset>
-				<Legend>
-					Przelicznik walut
-				</Legend>
+				<Legend>Przelicznik walut</Legend>
 				<Clock />
 				<Input
 					type="number"
 					value={amount}
 					onChange={({ target }) =>
-						setAmount(target.value.slice(0, INPUT_MAX_LENGTH))}
+						setAmount(target.value.slice(0, INPUT_MAX_LENGTH))
+					}
 				/>
-				<MainCurrency>
-					PLN
-				</MainCurrency>
+				<MainCurrency>PLN</MainCurrency>
 				<Output>
-					<Result
-						result={result}
-					>
-					</Result>
+					<Result result={result} />
 					<Select
 						onChange={({ target }) => setExchange(target.value)}
 					>
-						{currencies.map(currency =>
+						{currencies.map((currency) => (
 							<option
 								key={currency.key}
 								value={currency.exchange}
 							>
 								{currency.name}
 							</option>
-						)}
+						))}
 					</Select>
 				</Output>
-				<Button>
-					Przelicz
-				</Button>
+				<Button>Przelicz</Button>
 				<Information>
-					<p>
-						Kursy walut na dzień 23.02.2023r.
-					</p>
+					<p>Kursy walut na dzień 23.02.2023r.</p>
 				</Information>
 			</Fieldset>
 		</Wrapper>
