@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import "./style.css";
+import { Wrapper } from "./styled.js";
+import { useCurrentDate } from "./useCurrentDate.js";
 
 const formatDate = (date) => {
   return (
@@ -14,20 +14,12 @@ const formatDate = (date) => {
   );
 };
 
-const Clock = () => {
-  const [date, setDate] = useState(new Date());
-
-  useEffect(() => {
-    setInterval(() => {
-      setDate(new Date());
-    });
-  }, []);
+export const Clock = () => {
+  const date = useCurrentDate();
 
   return (
-    <div className="clock">
+    <Wrapper>
       Dzisiaj jest {formatDate(date)}
-    </div>
+    </Wrapper>
   );
 };
-
-export default Clock;

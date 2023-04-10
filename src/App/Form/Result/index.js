@@ -1,9 +1,7 @@
-import "./style.css";
+import { ResultValue } from "./styled";
 
-const Result = ({ result }) => (
-	<span className="result">
+export const Result = ({ result }) => (
+	<ResultValue>
 		{result.toFixed(2)}
-	</span>
+	</ResultValue>
 );
-
-export default Result;

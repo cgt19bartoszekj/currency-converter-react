@@ -1,20 +1,19 @@
-import { useState } from 'react';
-import '../index.css';
-import Form from "./Form";
+import { useState } from "react";
+import "../index.css";
+import { Form } from "./Form";
 
 function App() {
-	const [result, setNewResult] = useState(0);
+	const [result, setResult] = useState(0);
 
 	const calculateResult = (rate, amount) => {
-		setNewResult(result => amount * rate);
+		setResult((result) => amount * rate);
 	};
 
 	return (
 		<Form
 			calculateResult={calculateResult}
 			result={result}
-		>
-		</Form>
+		/>
 	);
 }
 

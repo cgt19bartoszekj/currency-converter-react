@@ -1,4 +1,4 @@
-const currencies = [
+export const currencies = [
 	{
 		key: 0,
 		name: "EUR",
@@ -15,5 +15,3 @@ const currencies = [
 		exchange: 0.19
 	}
 ];
-
-export default currencies;

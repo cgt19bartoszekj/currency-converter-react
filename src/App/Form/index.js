@@ -1,13 +1,23 @@
 import { useState } from "react";
-import "./style.css";
-import currencies from "../currencies";
-import Result from "./Result";
-import Clock from "./Clock";
+import { currencies } from "../currencies";
+import { Result } from "./Result";
+import { Clock } from "./Clock";
+import {
+	Wrapper,
+	Fieldset,
+	Legend,
+	Input,
+	MainCurrency,
+	Output,
+	Select,
+	Button,
+	Information
+} from "./styled";
 
 
 const INPUT_MAX_LENGTH = 14;
 
-const Form = ({ calculateResult, result }) => {
+export const Form = ({ calculateResult, result }) => {
 	const [exchange, setExchange] = useState(0.21);
 	const [amount, setAmount] = useState("");
 
@@ -18,32 +28,27 @@ const Form = ({ calculateResult, result }) => {
 	};
 
 	return (
-		<form
-			onSubmit={onFormSubmit}
-			className="form"
-		>
-			<fieldset className="form__fieldset">
-				<legend>Przelicznik walut</legend>
-				<Clock>
-
-				</Clock>
-				<input
-					className="form__input"
+		<Wrapper onSubmit={onFormSubmit}>
+			<Fieldset>
+				<Legend>
+					Przelicznik walut
+				</Legend>
+				<Clock />
+				<Input
 					type="number"
 					value={amount}
 					onChange={({ target }) =>
 						setAmount(target.value.slice(0, INPUT_MAX_LENGTH))}
 				/>
-				<span className="form__mainCurrency">
+				<MainCurrency>
 					PLN
-				</span>
-				<div className="form__output">
+				</MainCurrency>
+				<Output>
 					<Result
 						result={result}
 					>
 					</Result>
-					<select
-						className="form__select"
+					<Select
 						onChange={({ target }) => setExchange(target.value)}
 					>
 						{currencies.map(currency =>
@@ -54,19 +59,17 @@ const Form = ({ calculateResult, result }) => {
 								{currency.name}
 							</option>
 						)}
-					</select>
-				</div>
-				<button className="form__button">
+					</Select>
+				</Output>
+				<Button>
 					Przelicz
-				</button>
-				<div className="form__information">
+				</Button>
+				<Information>
 					<p>
 						Kursy walut na dzień 23.02.2023r.
 					</p>
-				</div>
-			</fieldset>
-		</form>
+				</Information>
+			</Fieldset>
+		</Wrapper>
 	);
 };
-
-export default Form;
