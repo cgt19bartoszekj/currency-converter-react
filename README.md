@@ -4,7 +4,8 @@
 https://cgt19bartoszekj.github.io/currency-converter-react/
 
 ## About this project
-This website lets you convert **PLN** to **EUR**, **USD** and **GBP**
+This website lets you convert **PLN** to **EUR**, **USD** and **GBP**.
+It also shows you current date.
 
 !["Website"](./public/currency-converter-gif.gif)
 
