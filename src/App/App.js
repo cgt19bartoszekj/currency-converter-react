@@ -3,14 +3,14 @@ import { useResult } from "./useResult";
 import { Form } from "./Form";
 
 function App() {
-	const { result, calculateResult } = useResult();
+  const { result, calculateResult } = useResult();
 
-	return (
-		<Form
-			calculateResult={calculateResult}
-			result={result}
-		/>
-	);
+  return (
+    <Form
+      calculateResult={calculateResult}
+      result={result}
+    />
+  );
 }
 
 export default App;
