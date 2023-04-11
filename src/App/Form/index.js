@@ -7,7 +7,6 @@ import {
   Fieldset,
   Legend,
   Input,
-  MainCurrency,
   Output,
   Select,
   Button,
@@ -17,13 +16,14 @@ import {
 const INPUT_MAX_LENGTH = 14;
 
 export const Form = ({ calculateResult, result }) => {
-  const [exchange, setExchange] = useState(0.21);
+  const [inputValue, setInputValue] = useState(1);
+  const [outputValue, setOutputValue] = useState(1);
   const [amount, setAmount] = useState("");
 
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    calculateResult(exchange, amount);
+    calculateResult(inputValue, outputValue, amount);
   };
 
   return (
@@ -40,19 +40,18 @@ export const Form = ({ calculateResult, result }) => {
             setAmount(target.value.slice(0, INPUT_MAX_LENGTH))
           }
         />
-        <MainCurrency>
-          PLN
-        </MainCurrency>
+        <Select onChange={({ target }) => setInputValue(target.value)}>
+          {currencies.map((currency) => (
+            <option value={currency.value}>
+              {currency.name}
+            </option>
+          ))}
+        </Select>
         <Output>
           <Result result={result} />
-          <Select
-            onChange={({ target }) => setExchange(target.value)}
-          >
+          <Select onChange={({ target }) => setOutputValue(target.value)}>
             {currencies.map((currency) => (
-              <option
-                key={currency.key}
-                value={currency.exchange}
-              >
+              <option value={currency.value}>
                 {currency.name}
               </option>
             ))}

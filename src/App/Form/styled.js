@@ -35,10 +35,6 @@ export const Input = styled.input`
   }
 `;
 
-export const MainCurrency = styled.span`
-  margin-left: 10px;
-`;
-
 export const Output = styled.div`
   margin-top: 20px;
 `;

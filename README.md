@@ -16,7 +16,7 @@ This website lets you convert **PLN** to **EUR**, **USD** and **GBP**
 - React
 
 ## Additional information
-Exchanges are from 23.02.2023.
+Values are from 23.02.2023.
 
 ## Getting Started with Create React App
 

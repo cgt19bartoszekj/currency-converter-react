@@ -1,17 +1,18 @@
 export const currencies = [
   {
-    key: 0,
+    name: "PLN",
+    value: 1
+  },
+  {
     name: "EUR",
-    exchange: 0.21
+    value: 4.67
   },
   {
-    key: 1,
     name: "USD",
-    exchange: 0.22
+    value: 4.28
   },
   {
-    key: 2,
     name: "GBP",
-    exchange: 0.19
+    value: 5.32
   }
 ];
