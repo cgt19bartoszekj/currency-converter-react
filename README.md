@@ -13,7 +13,6 @@ It also shows you current date.
 - HTML
 - CSS
 - Javvascript
-- BEM Methology
 - React
 
 ## Additional information
