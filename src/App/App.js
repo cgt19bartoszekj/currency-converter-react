@@ -1,4 +1,4 @@
-import "../index.css";
+
 import { useResult } from "./useResult";
 import { Form } from "./Form";
 

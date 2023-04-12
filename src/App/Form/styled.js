@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.form`
   max-width: 1000px;
@@ -7,7 +7,7 @@ export const Wrapper = styled.form`
 
 export const Fieldset = styled.fieldset`
   padding: 0px 40px 0 40px;
-  border: 1px solid #b3b3b3;
+  border: 1px solid ${({ theme }) => theme.colors.brightGrey};
   border-radius: 50px;
   background-color: #00000090;
   box-shadow: #000000 0 0 20px;
@@ -19,19 +19,19 @@ export const Legend = styled.legend`
 
 export const Input = styled.input`
   width: 50%;
-  color: #e8eaed;
+  color: ${({ theme }) => theme.colors.white};
   border: none;
-  outline: 1px solid #b3b3b3;
+  outline: 1px solid ${({ theme }) => theme.colors.brightGrey};
   border-radius: 10px;
   padding: 0 10px;
   background: #00000090;
 
   &:focus {
-    outline: 2px solid #007bff;
+    outline: 2px solid ${({ theme }) => theme.colors.blue};
   }
 
   &:active {
-    outline: 2px solid #66b0ff;
+    outline: 2px solid ${({ theme }) => theme.colors.brightBlue};
   }
 `;
 
@@ -41,7 +41,7 @@ export const Output = styled.div`
 
 export const Select = styled.select`
   cursor: pointer;
-  color: #bdc1c6;
+  color: ${({ theme }) => theme.colors.grey};
   border: none;
   background: none;
   padding: 0;
@@ -52,8 +52,8 @@ export const Button = styled.button`
   width: 100%;
   border-radius: 50px;
   background: #00000090;
-  color: #e8eaed;
-  border: 1px solid #bdc1c6;
+  color: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.brightGrey};
   transition: 0.3s;
   margin-top: 10px;
 
@@ -73,6 +73,6 @@ export const Information = styled.div`
   font-size: 17px;
   font-style: italic;
   text-align: center;
-  color: #bbbbbb;
+  color: ${({ theme }) => theme.colors.grey};
   margin: 0;
 `;
