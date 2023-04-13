@@ -4,9 +4,13 @@ export const useCurrentDate = () => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       setDate(new Date());
-    });
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   return date;
