@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = "https://api.exchangerate.host/latest?base=PLN&symbols=PLN,USD,EUR,GBP";
+const API_URL = "https://api.exchangerate.host/latest?symbols=PLN,USD,EUR,GBP";
 
 export const useRatesData = () => {
   const [ratesData, setRatesData] = useState({ status: "loading" });

@@ -8,7 +8,7 @@ export const useResult = () => {
     const inputRate = ratesData.rates[inputCurrency];
     const outputRate = ratesData.rates[outputCurrency];
 
-    setResult(result => (amount * inputRate) / outputRate);
+    setResult(result => (amount * outputRate) / inputRate);
   };
   return { result, calculateResult };
 };
