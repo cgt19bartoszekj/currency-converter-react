@@ -83,11 +83,17 @@ export const Information = styled.div`
 
 export const Fail = styled.div`
 	text-align: center;
-  margin-bottom: 40px;
-	color: red;
+	margin-bottom: 40px;
+	color: ${({ theme }) => theme.colors.red};
 `;
 
 export const Loading = styled.div`
 	text-align: center;
-  margin-bottom: 40px;
+	margin-bottom: 40px;
+`;
+export const Loader = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
 `;

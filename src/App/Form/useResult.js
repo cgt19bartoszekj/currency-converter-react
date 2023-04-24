@@ -10,5 +10,6 @@ export const useResult = () => {
 
     setResult(result => (amount * outputRate) / inputRate);
   };
+  
   return { result, calculateResult };
 };

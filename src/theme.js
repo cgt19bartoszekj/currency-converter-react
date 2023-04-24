@@ -6,5 +6,6 @@ export const theme = {
     blue: "#007bff",
     brightBlue: "#66b0ff",
     black: "#000000",
+    red: "#ff0000"
   }
 };

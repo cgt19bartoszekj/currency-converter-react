@@ -13,8 +13,10 @@ import {
   Button,
   Information,
   Fail,
-  Loading
+  Loading,
+  Loader
 } from "./styled";
+import { Waveform } from '@uiball/loaders';
 
 const INPUT_MAX_LENGTH = 14;
 
@@ -44,71 +46,83 @@ export const Form = () => {
           Przelicznik walut
         </Legend>
         <Clock />
-        {ratesData.status === "loading" ? (
-          <Loading>
-            Prosimy czekać, pobieramy aktualne kursy walut.
-          </Loading>
-        ) : ratesData.status === "error" ? (
-          <Fail>
-            Coś poszło nie tak. Sprawdź swoje połączenie z
-            internetem lub spróbuj ponownie później.
-          </Fail>
-        ) : (
-          <>
-            <Input
-              type="number"
-              value={amount}
-              onChange={({ target }) =>
-                setAmount(target.value.slice(0, INPUT_MAX_LENGTH))
-              }
-            />
-            <Select
-              value={inputCurrency}
-              onChange={({ target }) =>
-                setInputCurrency(target.value)
-              }
-            >
-              {Object.keys(ratesData.rates).map(
-                (inputCurrency) => (
-                  <option
-                    value={inputCurrency}
-                    key={inputCurrency}
+        {ratesData.status === "loading"
+          ? (
+            <>
+              <Loading>
+                <Loader>
+                  <Waveform
+                    size={40}
+                    lineWeight={5}
+                    speed={1}
+                    color="white"
+                  />
+                </Loader>
+                Prosimy czekać, pobieramy aktualne kursy walut.
+              </Loading>
+            </>
+          ) : ratesData.status === "error"
+            ? (
+              <Fail>
+                Coś poszło nie tak. Sprawdź swoje połączenie z
+                internetem lub spróbuj ponownie później.
+              </Fail>
+            ) : (
+              <>
+                <Input
+                  type="number"
+                  value={amount}
+                  onChange={({ target }) =>
+                    setAmount(target.value.slice(0, INPUT_MAX_LENGTH))
+                  }
+                />
+                <Select
+                  value={inputCurrency}
+                  onChange={({ target }) =>
+                    setInputCurrency(target.value)
+                  }
+                >
+                  {Object.keys(ratesData.rates).map(
+                    (inputCurrency) => (
+                      <option
+                        value={inputCurrency}
+                        key={inputCurrency}
+                      >
+                        {inputCurrency}
+                      </option>
+                    )
+                  )}
+                </Select>
+                <Output>
+                  <Result result={result} />
+                  <Select
+                    value={outputCurrency}
+                    onChange={({ target }) =>
+                      setOutputCurrency(target.value)
+                    }
                   >
-                    {inputCurrency}
-                  </option>
-                )
-              )}
-            </Select>
-            <Output>
-              <Result result={result} />
-              <Select
-                value={outputCurrency}
-                onChange={({ target }) =>
-                  setOutputCurrency(target.value)
-                }
-              >
-                {Object.keys(ratesData.rates).map(
-                  (outputCurrency) => (
-                    <option
-                      value={outputCurrency}
-                      key={outputCurrency}
-                    >
-                      {outputCurrency}
-                    </option>
-                  )
-                )}
-              </Select>
-            </Output>
-            <Button>
-              Przelicz
-            </Button>
-            <Information>
-              <p>
-                Kursy walut na dzień {ratesData.date}.
-              </p>
-            </Information>
-          </>
-        )}
+                    {Object.keys(ratesData.rates).map(
+                      (outputCurrency) => (
+                        <option
+                          value={outputCurrency}
+                          key={outputCurrency}
+                        >
+                          {outputCurrency}
+                        </option>
+                      )
+                    )}
+                  </Select>
+                </Output>
+                <Button>
+                  Przelicz
+                </Button>
+                <Information>
+                  <p>
+                    Kursy walut na dzień {ratesData.date}.
+                  </p>
+                </Information>
+              </>
+            )}
       </Fieldset>
     </Wrapper>
   );
