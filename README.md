@@ -16,7 +16,7 @@ It also shows you current date.
 - React
 
 ## Additional information
-Values are from 23.02.2023.
+Values are from https://exchangerate.host.
 
 ## Getting Started with Create React App
 
