@@ -91,6 +91,7 @@ export const Loading = styled.div`
 	text-align: center;
 	margin-bottom: 40px;
 `;
+
 export const Loader = styled.div`
 	display: flex;
 	align-items: center;
